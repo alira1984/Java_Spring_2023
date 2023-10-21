@@ -39,6 +39,19 @@ create table ant_anotacao (
     primary key (ant_id),
     foreign key ant_usr_fk (ant_usr_id) references usr_usuario(usr_id)
 );
+create table emp_empregado (
+ emp_id bigint primary key auto_increment,
+ emp_nome_completo varchar(100) not null,
+ emp_ctps bigint not null,
+ emp_data_hora_cadastro datetime not null,
+ emp_email varchar(30) not null,
+ emp_carga_horaria float
+);
+
+insert into emp_empregado (emp_nome_completo, emp_ctps, emp_data_hora_cadastro, emp_email)
+ values ('Charles Smith', 12345678910, current_timestamp(), 'chsmith@email.com'),
+ ('Ann Doe', 23456743212, current_timestamp(), 'anndoe@email.com');
+
 insert into usr_usuario (usr_nome, usr_senha)
     values ('admin', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C');
 insert into aut_autorizacao (aut_nome)
