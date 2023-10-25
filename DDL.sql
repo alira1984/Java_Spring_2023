@@ -48,6 +48,19 @@ create table emp_empregado (
  emp_carga_horaria float
 );
 
+create table tmp_temperatura (
+ tmp_id bigint primary key auto_increment,
+ tmp_data_hora datetime not null,
+ tmp_medida float not null,
+ tmp_umidade float,
+ tmp_particulas float
+);
+
+insert into tmp_temperatura (tmp_data_hora, tmp_medida, tmp_umidade, tmp_particulas)
+ values ('2023-10-24 10:00', 25.4, null, 31.3),
+        ('2023-10-24 11:00', 26.1, 43.2, null);
+
+
 insert into emp_empregado (emp_nome_completo, emp_ctps, emp_data_hora_cadastro, emp_email)
  values ('Charles Smith', 12345678910, current_timestamp(), 'chsmith@email.com'),
  ('Ann Doe', 23456743212, current_timestamp(), 'anndoe@email.com');
